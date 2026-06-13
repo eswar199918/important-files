@@ -1,0 +1,74 @@
+Developer
+   ↓
+GitHub Repository
+   ↓
+Pull Request (PR)
+   ↓
+Code Review
+   ↓
+Merge to Main Branch
+   ↓
+GitHub Webhook
+   ↓
+Jenkins Pipeline Triggered
+   ↓
+Git Checkout
+   ↓
+Gitleaks
+(Secrets Scan)
+   ↓
+Maven Build
+(mvn clean package)
+   ↓
+Unit Tests
+(mvn test)
+   ↓
+SonarQube Scan (SAST)
+   ↓
+Quality Gate
+ ├─ Coverage >= 80%
+ ├─ Critical Vulnerabilities = 0
+ ├─ Blocker Bugs = 0
+ └─ Security Rating = A
+   ↓
+OWASP Dependency Check (SCA)
+ ├─ CVE Scan
+ └─ Fail if CVSS > 7
+   ↓
+Docker Build
+   ↓
+Trivy Image Scan
+ ├─ OS Vulnerabilities
+ ├─ Package Vulnerabilities
+ ├─ Secrets
+ └─ Misconfigurations
+   ↓
+Fail if HIGH/CRITICAL Found
+   ↓
+Push Docker Image to ECR
+   ↓
+Helm Chart Validation
+(helm lint)
+   ↓
+Deploy to EKS Green Environment
+   ↓
+Health Checks
+ ├─ Readiness Probe
+ ├─ Liveness Probe
+ └─ Smoke Tests
+   ↓
+Blue-Green Switch
+(Service/Ingress Updated)
+   ↓
+Production Live
+   ↓
+DAST Scan (OWASP ZAP)
+   ↓
+Monitoring
+(Prometheus + Grafana)
+   ↓
+Logging
+(EFK Stack)
+   ↓
+Alerting
+(PagerDuty / Email / Slack)
