@@ -1,3 +1,9 @@
+
+Checkov is used to scan Infrastructure as Code (IaC) files like Terraform.
+
+It identifies security misconfigurations and compliance issues before deployment.
+It is typically run in the CI/CD pipeline to enforce shift-left security.
+
 Example : 
 
 cat <<EOF > main.tf
